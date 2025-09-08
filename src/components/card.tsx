@@ -26,7 +26,7 @@ export function Card({
       >
         {image && <div className="relative w-full h-24 mb-3">{image}</div>}
 
-        <h2 className="font-bold text-sm leading-tight mb-2 line-clamp-2">
+        <h2 className="font-display font-bold text-sm leading-tight mb-2 line-clamp-2">
           {title}
         </h2>
 
@@ -34,7 +34,7 @@ export function Card({
           <span>{author}</span> • <span>{date}</span>
         </div>
 
-        <p className="text-xs leading-relaxed text-gray-700 line-clamp-3">
+        <p className="font-mono text-xs leading-relaxed text-gray-700 line-clamp-3">
           {excerpt}
         </p>
       </article>

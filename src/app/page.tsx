@@ -4,7 +4,7 @@ import { GridItem } from "@/components/grid-item";
 
 export default function Home() {
   return (
-    <div className="font-sans min-h-screen">
+    <div className="min-h-screen">
       <main className="px-4 py-4">
         <Grid>
           <GridItem colSpan={1} rowSpan={2}>
