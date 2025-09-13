@@ -22,7 +22,7 @@ export function Card({
   return (
     <Link href={href}>
       <article
-        className={`h-full border-2 border-black rounded-lg p-3 hover:shadow-lg transition-shadow cursor-pointer ${className ?? ""}`}
+        className={`h-full p-3 cursor-pointer ${className ?? ""}`}
       >
         {image && <div className="relative w-full h-24 mb-3">{image}</div>}
 

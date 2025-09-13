@@ -7,7 +7,7 @@ export default function Home() {
     <div className="min-h-screen">
       <main className="px-4 py-4">
         <Grid>
-          <GridItem colSpan={1} rowSpan={2}>
+          <GridItem colSpan={1} rowSpan={1}>
             <Card
               title="Title"
               author="Author"
@@ -18,6 +18,16 @@ export default function Home() {
           </GridItem>
 
           <GridItem colSpan={2} rowSpan={1}>
+            <Card
+              title="Another Title"
+              author="Author"
+              date="01/01/01"
+              excerpt="Sed sit amet sem commodo libero facilisis malesuada..."
+              href="#"
+            />
+          </GridItem>
+
+          <GridItem colSpan={3} rowSpan={1}>
             <Card
               title="Another Title"
               author="Author"

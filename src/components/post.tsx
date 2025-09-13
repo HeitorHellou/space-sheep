@@ -1,10 +1,4 @@
-import { Kalam } from "next/font/google";
 import Image from "next/image";
-
-const kalam = Kalam({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-});
 
 interface PostProps {
   title: string;
@@ -77,7 +71,7 @@ export function Post({ title, author, date, content }: PostProps) {
   return (
     <article className="max-w-4xl mx-auto p-4">
       <header className="mb-8 border-b-2 border-black pb-4">
-        <h1 className={`${kalam.className} text-2xl md:text-3xl font-bold mb-3 leading-tight`}>
+        <h1 className={`font-ui text-2xl md:text-3xl font-bold mb-3 leading-tight`}>
           {title}
         </h1>
         

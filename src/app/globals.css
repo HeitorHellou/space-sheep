@@ -49,3 +49,13 @@ body {
 .font-body { font-family: var(--font-body); }
 .font-mono { font-family: var(--font-mono); }
 .font-ui { font-family: var(--font-ui); }
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: var(--color-ink-black);
+}
+.grid-item {
+  background-color: var(--color-paper);
+  padding: 1rem;
+}
