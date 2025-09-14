@@ -14,8 +14,6 @@ export function Topbar() {
         <a href="https://github.com/HeitorHellou" className="hover:underline"><Github /></a>
         <span className="text-lg">|</span>
         <a href="https://www.linkedin.com/in/heitor-hellou/" className="hover:underline"><Linkedin /></a>
-        <span className="text-lg">|</span>
-        <a href="#" className="text-lg">ABOUT ME</a>
       </nav>
     </div>
   );

@@ -5,20 +5,19 @@ import { GridItem } from '@/components/grid-item';
 
 export default function Home() {
   const posts = getPosts();
-  console.log(posts);
   
   return (
     <div className="min-h-screen">
       <main className="px-4 py-4">
         <Grid>
           {posts.map((post, i) => (
-            <GridItem key={post.slug} colSpan={(i % 3 + 1) as 1 | 2 | 3}>
+            <GridItem key={post.slug} colSpan={post.colSpan}>
               <Card
                 title={post.title}
-                author="Heitor"
+                author={post.author}
                 date={post.date}
                 excerpt={post.excerpt || ''}
-                href={`/blog/${post.slug}`}
+                href={`/post/${post.slug}`}
               />
             </GridItem>
           ))}

@@ -6,8 +6,10 @@ const postsDirectory = path.join(process.cwd(), 'posts');
 
 export type Post = {
   slug: string;
+  colSpan: 1 | 2 | 3;
   title: string;
   date: string;
+  author: string;
   content: string;
   excerpt?: string;
 };
@@ -16,9 +18,9 @@ export function getPosts(): Post[] {
   if (!fs.existsSync(postsDirectory)) {
     return [];
   }
-  
+
   const fileNames = fs.readdirSync(postsDirectory);
-  
+
   return fileNames
     .filter(fn => fn.endsWith('.md'))
     .map(fileName => {
@@ -26,12 +28,18 @@ export function getPosts(): Post[] {
       const fullPath = path.join(postsDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data, content } = matter(fileContents);
-      
+
       return {
         slug,
+        colSpan: data.colspan,
         title: data.title || slug,
-        date: data.date || fileName.substring(0, 10),
-        excerpt: data.excerpt || content.substring(0, 150) + '...',
+        date: data.date ? new Date(data.date).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        }) : new Date().toISOString().split('T')[0],
+        author: data.author,
+        excerpt: data.excerpt || content.substring(0, 150).replace(/[#*_`]/g, '') + '...',
         content
       };
     })
